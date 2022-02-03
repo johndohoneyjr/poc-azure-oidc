@@ -63,9 +63,9 @@ function Poc-AzureAdEphemOIDC {dir
         az ad app owner add --id $APP_OBJ_ID --owner-object-id $USER_OBJ_ID
 
         Write-Host "Creating federated Identity Credential..." -ForegroundColor Green
-        az rest --method POST --uri "https://graph.microsoft.com/beta/applications/${APP_OBJ_ID}/federatedIdentityCredentials" --body "{'name':'refpathfic','issuer':'https://token.actions.githubusercontent.com','subject':'repo:${GH_REPO}:ref:refs/heads/main','description':'main','audiences':['api://AzureADTokenExchange']}"
-        az rest --method POST --uri "https://graph.microsoft.com/beta/applications/${APP_OBJ_ID}/federatedIdentityCredentials" --body "{'name':'prfic','issuer':'https://token.actions.githubusercontent.com','subject':'repo:${GH_REPO}:pull-request','description':'pr','audiences':['api://AzureADTokenExchange']}"
-        az rest --method POST --uri "https://graph.microsoft.com/beta/applications/${APP_OBJ_ID}/federatedIdentityCredentials" --body "{'name':'envfic','issuer':'https://token.actions.githubusercontent.com','subject':'repo:${GH_REPO}:environment:Production','description':'Environment Production','audiences':['api://AzureADTokenExchange']}"
+        az rest --method POST --uri "https://graph.microsoft.com/beta/applications/${APP_OBJ_ID}/federatedIdentityCredentials" --body "{'name':'refpath','issuer':'https://token.actions.githubusercontent.com','subject':'repo:${GH_REPO}:ref:refs/heads/main','description':'main','audiences':['api://AzureADTokenExchange']}"
+        az rest --method POST --uri "https://graph.microsoft.com/beta/applications/${APP_OBJ_ID}/federatedIdentityCredentials" --body "{'name':'pullrequest','issuer':'https://token.actions.githubusercontent.com','subject':'repo:${GH_REPO}:pull-request','description':'pr','audiences':['api://AzureADTokenExchange']}"
+        az rest --method POST --uri "https://graph.microsoft.com/beta/applications/${APP_OBJ_ID}/federatedIdentityCredentials" --body "{'name':'environment','issuer':'https://token.actions.githubusercontent.com','subject':'repo:${GH_REPO}:environment:Production','description':'Environment Production','audiences':['api://AzureADTokenExchange']}"
 
         Write-Host "Creating GitHub repository secrets...`n" -ForegroundColor Green
         Write-Host AZURE_CLIENT_ID=$APP_ID
