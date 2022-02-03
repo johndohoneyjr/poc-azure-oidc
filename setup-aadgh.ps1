@@ -12,7 +12,7 @@
 #>
 
 
-function Poc-AzureAdEphemOIDC {
+function Poc-AzureAdEphemOIDC {dir
     [cmdletbinding()]
     param (
         [Parameter(Mandatory = $true, HelpMessage = "The name of the application registration")]
@@ -91,9 +91,9 @@ function Poc-AzureAdEphemOIDC {
 
 $APP_NAME = 'poc-azure-oidc'
 $GH_REPO = 'johndohoneyjr/poc-azure-oidc'
-$OWNER = '27d9daa3-90a0-4a08-aa7d-9f52aedd8a34'
-$TENANT_ID = '72f988bf-86f1-41af-91ab-2d7cd011db47'
-$SUB_ID = '33732876-7635-4beb-9654-e3c3c37b7ecb'
+$OWNER = '****'
+$TENANT_ID = '***'
+$SUB_ID = '***'
 
 Write-Host "Make sure you are logged in to Azure CLI...`n`n" -ForegroundColor Green
 az login
