@@ -88,7 +88,9 @@ function Poc-AzureAdEphemOIDC {dir
     }
 }
 
-
+<#
+  Be sure to add your Owner, Tennet and subscription when you clone this repo
+#>
 $APP_NAME = 'poc-azure-oidc'
 $GH_REPO = 'johndohoneyjr/poc-azure-oidc'
 $OWNER = '****'
