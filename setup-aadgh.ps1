@@ -12,7 +12,7 @@
 #>
 
 
-function Poc-AzureAdEphemOIDC {dir
+function Poc-AzureAdEphemOIDC {
     [cmdletbinding()]
     param (
         [Parameter(Mandatory = $true, HelpMessage = "The name of the application registration")]
